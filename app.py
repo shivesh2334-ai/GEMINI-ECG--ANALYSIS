@@ -25,7 +25,7 @@ def get_gemini_response(api_key, image, prompt):
     """Sends image and text prompt to Gemini 1.5 Flash"""
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-pro')
+        model = genai.GenerativeModel('models/gemini-3-pro-image-preview')
         response = model.generate_content([prompt, image])
         return response.text
     except Exception as e:
